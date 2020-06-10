@@ -1,6 +1,7 @@
 package com.example.testbarang;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -21,5 +22,12 @@ public class LihatBarang extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lihat_barang);
+
+        //Inisialisasi RecylerView dan komponennya
+
+        rvView = (RecyclerView) findViewById(R.id.rv_main);
+        rvView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        rvView.setLayoutManager(layoutManager);
     }
 }
