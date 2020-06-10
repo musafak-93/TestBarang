@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.firebase.database.DataSnapshot;
@@ -67,8 +69,14 @@ public class LihatBarang extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                //Kode ini akan dipanggil ketika ada error dan pengambilan data gagal
+                //dan memprint errornya ke Logcat
+                System.out.println(databaseError.getDetails()+""+databaseError.getMessage());
 
             }
-        })
+        });
+    }
+    public static Intent getActIntent(Activity activity) {
+        return new Intent(activity, LihatBarang.class);
     }
 }
