@@ -51,7 +51,9 @@ public class LihatBarang extends AppCompatActivity {
                     Barang barang = noteDataSnapShot.getValue(Barang.class);
                     barang.setKode(noteDataSnapShot.getKey());
 
-
+                    //Menambahkan object barang yang sudah dimapping
+                    //kedalam arraylist
+                    daftarBarang.add(barang);
                 }
 
             }
