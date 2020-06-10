@@ -5,12 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.ViewHolder> {
     private ArrayList<Barang> daftarBarang;
     private Context context;
+
 
     public AdapterLihatBarang(ArrayList<Barang> barangs, Context ctx) {
         //Inisiasi data dan variable yang akan digunakan
@@ -48,13 +51,13 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
         final String name = daftarBarang.get(position).getNama();
         holder.tvTitle.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 //utk latihan selanjutnya jika ingin membaca detail data
             }
         });
         holder.tvTitle.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public boolean onLongClick(View v) {
+            public boolean onLongClick(View view) {
                 //utk latihan selanjutnya fungsi delete dan update data
                 return true;
             }
