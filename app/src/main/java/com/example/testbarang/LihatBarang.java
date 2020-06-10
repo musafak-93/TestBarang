@@ -42,9 +42,11 @@ public class LihatBarang extends AppCompatActivity {
         database.child("Barang").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 //Saat data baru, masukan datanya ke Array list
                 daftarBarang = new ArrayList<>();
                 for (DataSnapshot noteDataSnapShot : dataSnapshot.getChildren()){
+
                     //Mapping data pada DataSnapshot ke dalam object barang
                     //dan juga menyimpan primary key pada object barang
                     // untuk keperluan edit dan delete data
@@ -55,6 +57,11 @@ public class LihatBarang extends AppCompatActivity {
                     //kedalam arraylist
                     daftarBarang.add(barang);
                 }
+
+                //Inisialisasi adapter dan data barang dalam bentuk arraylist
+                //dan mengeset adapter ke dalam recylerview
+                adapter = new AdapterLihatBarang(daftarBarang, LihatBarang.this);
+                rvView.setAdapter(adapter);
 
             }
 
