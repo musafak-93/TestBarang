@@ -99,4 +99,8 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
         //mengembalikan jumlah item pada barang
         return daftarBarang.size();
     }
+
+    public interface FirebaseDataListener{
+        void onDeleteData(Barang barang, int position);
+    }
 }
