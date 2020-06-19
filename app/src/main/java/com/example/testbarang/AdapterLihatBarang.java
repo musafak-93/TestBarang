@@ -23,7 +23,7 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
         //Inisiasi data dan variable yang akan digunakan
         daftarBarang = barangs;
         context = ctx;
-        listener = (FirebaseDataListener) ctx;
+        listener = (LihatBarang)ctx;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
