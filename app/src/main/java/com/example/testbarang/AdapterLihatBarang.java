@@ -67,6 +67,8 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
                 dialog.setTitle("Pilih Aksi");
                 dialog.show();
 
+                Button editButton = (Button) dialog.findViewById(R.id.bt_edit_data);
+                Button delButton = (Button) dialog.findViewById(R.id.bt_delete_data);
 
                 return true;
             }
