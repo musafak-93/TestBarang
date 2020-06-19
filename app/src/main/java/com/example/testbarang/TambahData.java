@@ -96,7 +96,7 @@ public class TambahData extends AppCompatActivity {
         // Cek apakah ada fields yang kosong, sebelum disubmit
         return TextUtils.isEmpty(s);*/
     }
-    /*private void updateBarang(Barang brg) {
+    private void updateBarang(Barang brg) {
         //Bari kode yang digunakan untuk mengupdate data barang
         //yang sudah dimasukan di firebase realtime database
         database.child("Barang")
@@ -111,5 +111,5 @@ public class TambahData extends AppCompatActivity {
                         finish();
                     }
                 });
-    }*/
+    }
 }
