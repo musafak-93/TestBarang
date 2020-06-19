@@ -87,7 +87,8 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-
+                                dialog.dismiss();
+                                listener.onDeleteData(daftarBarang.get(position), position);
                             }
                         }
                 );
