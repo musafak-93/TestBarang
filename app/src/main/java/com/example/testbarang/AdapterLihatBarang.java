@@ -70,6 +70,16 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
                 Button editButton = (Button) dialog.findViewById(R.id.bt_edit_data);
                 Button delButton = (Button) dialog.findViewById(R.id.bt_delete_data);
 
+                //apabila tombol edit diklik
+                editButton.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                                context.startActivity(TambahData.getActIntent((Activity) context).putExtra("data", daftarBarang.get(position)));
+                            }
+                        }
+                );
                 return true;
             }
         });
