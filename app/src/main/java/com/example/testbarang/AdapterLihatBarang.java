@@ -80,6 +80,15 @@ public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.
                             }
                         }
                 );
+                //apabila tombol delete diklik
+                delButton.setOnClickListener(
+                        new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                            }
+                        }
+                );
                 return true;
             }
         });
