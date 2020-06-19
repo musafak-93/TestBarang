@@ -16,12 +16,14 @@ import java.util.ArrayList;
 public class AdapterLihatBarang extends RecyclerView.Adapter<AdapterLihatBarang.ViewHolder> {
     private ArrayList<Barang> daftarBarang;
     private Context context;
+    FirebaseDataListener listener;
 
 
     public AdapterLihatBarang(ArrayList<Barang> barangs, Context ctx) {
         //Inisiasi data dan variable yang akan digunakan
         daftarBarang = barangs;
         context = ctx;
+        listener = (FirebaseDataListener) ctx;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
