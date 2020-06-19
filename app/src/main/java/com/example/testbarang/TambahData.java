@@ -98,9 +98,10 @@ public class TambahData extends AppCompatActivity {
     private void updateBarang(Barang brg) {
         //Bari kode yang digunakan untuk mengupdate data barang
         //yang sudah dimasukan di firebase realtime database
-        database.child("Barang")
-                .child(brg.getKode())
-                .setValue(brg)
+
+        database.child("Barang")//akses parent index, seperti nama tabel
+                .child(brg.getKode())//select barang berdasarkan key
+                .setValue(brg)//set value yang baru
                 .addOnSuccessListener(this, new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
