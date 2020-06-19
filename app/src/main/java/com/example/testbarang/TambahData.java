@@ -36,11 +36,10 @@ public class TambahData extends AppCompatActivity {
 
         // mengambil referensi ke firebase Database
         database = FirebaseDatabase.getInstance().getReference();
-        //
-        //final Barang barang = (Barang) getIntent().getSerializableExtra("data");
 
-        //
-        /*if (barang != null){
+        final Barang barang = (Barang) getIntent().getSerializableExtra("data");
+
+        if (barang != null){
             etKode.setText(barang.getKode());
             etNama.setText(barang.getNama());
             btSubmit.setOnClickListener(new View.OnClickListener() {
@@ -50,8 +49,8 @@ public class TambahData extends AppCompatActivity {
                     barang.setNama(etNama.getText().toString());
                     updateBarang(barang);
                 }
-            });*/
-        }//else {
+            });
+        }else {
             btSubmit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -67,7 +66,7 @@ public class TambahData extends AppCompatActivity {
                     imm.hideSoftInputFromWindow(etKode.getWindowToken(), 0);
                 }
             });
-       // }
+        }
     }
 
 
@@ -95,7 +94,7 @@ public class TambahData extends AppCompatActivity {
     /*private boolean isEmpty(String s) {
         // Cek apakah ada fields yang kosong, sebelum disubmit
         return TextUtils.isEmpty(s);*/
-    }
+    //}
     private void updateBarang(Barang brg) {
         //Bari kode yang digunakan untuk mengupdate data barang
         //yang sudah dimasukan di firebase realtime database
